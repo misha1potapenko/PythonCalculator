@@ -6,7 +6,6 @@ import sys
 
 
 type = ty.type()
-useresult = False
 
 while type ==  'racional':
     x = op.x()
