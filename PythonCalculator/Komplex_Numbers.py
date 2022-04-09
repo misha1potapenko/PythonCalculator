@@ -1,5 +1,7 @@
+# Module for work with komplex numbers
+
 def Insert_Numbers():
-    # Function invite user for insert two komplex numbers and operation between it 
+    '''Function invite user for insert two komplex numbers and operation between it'''
     print('Type of complex number: a + bi\n')
     user_komplex1 = input('Insert first complex number: ')
     user_komplex2 = input('Insert second complex number: ')
@@ -7,7 +9,7 @@ def Insert_Numbers():
     return [user_komplex1, user_komplex2, operation]
 
 def Take_Rational_Part(user_number):
-    # Function return rational part from komplex
+    '''Function return rational part from komplex'''
     rational_part = []
     for k in range(0, len(user_number)):
         if user_number[k] != ' ':
@@ -18,7 +20,7 @@ def Take_Rational_Part(user_number):
     return rational_part
 
 def Take_Imaginary_Part(user_number):
-    # Function return imaginary part
+    '''Function return imaginary part'''
     imaginary_part = []
     for i in range(0, len(user_number)):
         if user_number[i] == 'i':
@@ -30,7 +32,7 @@ def Take_Imaginary_Part(user_number):
     return imaginary_part
 
 def Take_Symbol(user_number):
-    #Function return - or + between rational and imaginary parts
+    '''Function return - or + between rational and imaginary parts'''
     symbol = []
     for l in range(0, len(user_number)):
         if user_number[l] == '-' and l !=0 or user_number[l] == '+' and l != 0:
@@ -39,7 +41,7 @@ def Take_Symbol(user_number):
     return symbol
 
 def Addition(r1, s1, i1, r2, s2, i2):
-    # Function add two komplex numbers
+    '''Function add two komplex numbers'''
     result = []
     result.append(r1+r2)
     if s1 == '+' and s2 == '+':
@@ -53,7 +55,7 @@ def Addition(r1, s1, i1, r2, s2, i2):
     return result
 
 def Deduction(r1, s1, i1, r2, s2, i2):
-    # Function deduction second komplex number from first
+    '''Function deduction second komplex number from first'''
     result = []
     result.append(r1-r2)
     if s1 == '+' and s2 == '+':
@@ -67,7 +69,7 @@ def Deduction(r1, s1, i1, r2, s2, i2):
     return result
 
 def Multiply(r1, s1, i1, r2, s2, i2):
-    # Function multiply two komplex numbers
+    '''Function multiply two komplex numbers'''
     result = []
     result.append(r1*r2)
     if s1 == "+" and s2 == "+" or s1 == "-" and s2 == "-":
@@ -89,7 +91,7 @@ def Multiply(r1, s1, i1, r2, s2, i2):
     return result    
     
 def division(r1, s1, i1, r2, s2, i2):
-    # Function divide two komplex numbers
+    '''Function divide two komplex numbers'''
     numerator = []
     denominator = []
     result = []
@@ -116,8 +118,8 @@ def division(r1, s1, i1, r2, s2, i2):
     return result
 
 def record_in_file(result):
-    # Added results in file'''
-    with open('results.txt', 'a') as data:
+    '''Added results in file'''
+    with open('C:/Users/user/Desktop/GeekBrains/Python/Seminar_Project/result.txt', 'w') as data:
         for i in range(0, 2):
             if result[i] > 0 and i == 1:
                 data.write('+ ')
@@ -126,15 +128,3 @@ def record_in_file(result):
             if i != 1:
                 data.write(' ')
         data.write('i')
-
-def Repeat_Or_No():
-    '''Function for asking user to continue or no'''
-    user_choice = 'Bad answer'
-    while user_choice != 'Y' or user_choice != 'N':
-        user_choice = input('Do you want continue work with komplex numbers? (Y or N)')
-        if user_choice == 'N':
-            return False
-        elif user_choice == 'Y':
-            return True
-        else:
-            print('Illegal answer! Do you want continue work with komplex numbers? Insert Y or N')
