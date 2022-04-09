@@ -53,7 +53,9 @@ def mainterminal():
             if useresult == 'yes':
                 x = res
                 continue
+            elif useresult == 'no':
+                break
             else:
-                break              
+                sys.exit()           
         else:   
             sys.exit()
