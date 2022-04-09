@@ -3,12 +3,12 @@ import sys
 
 def x():
     global firstnum
-    firstnum = float(input('Choose first float number: '))
+    firstnum = float(input('Choose first float number: ').replace(',', '.'))
     return firstnum
 
 def y():
     global secondnum
-    secondnum = float(input('Choose second float number: '))
+    secondnum = float(input('Choose second float number: ').replace(',', '.'))
     return secondnum
 
 
