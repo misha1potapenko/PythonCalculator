@@ -126,3 +126,15 @@ def record_in_file(result):
             if i != 1:
                 data.write(' ')
         data.write('i')
+
+def Repeat_Or_No():
+    '''Function for asking user to continue or no'''
+    user_choice = 'Bad answer'
+    while user_choice != 'Y' or user_choice != 'N':
+        user_choice = input('Do you want continue work with komplex numbers? (Y or N)')
+        if user_choice == 'N':
+            return False
+        elif user_choice == 'Y':
+            return True
+        else:
+            print('Illegal answer! Do you want continue work with komplex numbers? Insert Y or N')
