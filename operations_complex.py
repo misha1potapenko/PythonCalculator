@@ -4,6 +4,8 @@ def Insert_Numbers():
     user_komplex1 = input('Insert first complex number: ')
     user_komplex2 = input('Insert second complex number: ')
     operation = input('What do you want to do with that? (+, -, *, / are available only)')
+    with open('results.txt', 'a') as data:
+        data.write(f'({user_komplex1}){operation}({user_komplex2}) = ')
     return [user_komplex1, user_komplex2, operation]
 
 def Take_Rational_Part(user_number):
@@ -121,11 +123,17 @@ def record_in_file(result):
         for i in range(0, 2):
             if result[i] > 0 and i == 1:
                 data.write('+ ')
-            result[i] = str(result[i])
-            data.write(result[i])
+            elif result[i] < 0 and i == 1:
+                result[i] = -result[i]
+                result[i] = str(result[i])
+                data.write('- ')
+                data.write(result[i])
+            else:
+                result[i] = str(result[i])
+                data.write(result[i])
             if i != 1:
                 data.write(' ')
-        data.write('i')
+        data.write('i\n')
 
 def Repeat_Or_No():
     '''Function for asking user to continue or no'''
