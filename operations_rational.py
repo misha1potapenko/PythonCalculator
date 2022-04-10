@@ -23,16 +23,20 @@ def selectoperation():
 def res():
     if  operation == '+':
         res = firstnum + secondnum
-        return res
+        result = round(res, 3)
+        return result
     elif operation == '-':
         res = firstnum - secondnum
-        return res
+        result = round(res, 3)
+        return result
     elif operation == '*':
         res = firstnum * secondnum
-        return res
+        result = round(res, 3)
+        return result
     elif operation == '/':
         res = firstnum / secondnum
-        return res
+        result = round(res, 3)
+        return result
     else:
         print('invalid syntax')
 
