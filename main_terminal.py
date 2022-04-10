@@ -1,10 +1,10 @@
-import operations_racional as op
+import operations_rational as op
 import calculatortype as ty
 import operations_complex as opCom
 
 type = ty.type()
 
-while type ==  'racional':
+while type ==  'rational':
     op.mainterminal()
     
 if type == 'complex':
