@@ -2,15 +2,12 @@ import operations_rational as op
 import sys
 
 def x():
-    global firstnum
     firstnum = float(input('Choose first float number: ').replace(',', '.'))
     return firstnum
 
 def y():
-    global secondnum
     secondnum = float(input('Choose second float number: ').replace(',', '.'))
     return secondnum
-
 
 def selectoperation():
     global operation
@@ -20,7 +17,7 @@ def selectoperation():
     else:
         print('Invalid syntax')
 
-def res():
+def res(firstnum, secondnum):
     if  operation == '+':
         res = firstnum + secondnum
         result = round(res, 3)
@@ -46,7 +43,7 @@ def mainterminal():
     while True:
         y = op.y()
         oper = op.selectoperation()
-        res = op.res()
+        res = op.res(x, y)
         file = 'results.txt'
         with open('results.txt', 'a') as data:
             data.write(f'The result of {x} {oper} {y} = {res}\n')
