@@ -120,20 +120,24 @@ def division(r1, s1, i1, r2, s2, i2):
 def record_in_file(result):
     # Added results in file'''
     with open('results.txt', 'a') as data:
-        for i in range(0, 2):
-            if result[i] > 0 and i == 1:
-                data.write('+ ')
-            elif result[i] < 0 and i == 1:
-                result[i] = -result[i]
-                result[i] = str(result[i])
-                data.write('- ')
-                data.write(result[i])
-            else:
-                result[i] = str(result[i])
-                data.write(result[i])
-            if i != 1:
-                data.write(' ')
-        data.write('i\n')
+        if result[1] != 0:
+            for i in range(0, 2):
+                if result[i] > 0 and i == 1:
+                    data.write('+ ')
+                elif result[i] < 0 and i == 1:
+                    result[i] = -result[i]
+                    result[i] = str(result[i])
+                    data.write('- ')
+                    data.write(result[i])
+                else:
+                    result[i] = str(result[i])
+                    data.write(result[i])
+                if i != 1:
+                    data.write(' ')
+            data.write('i\n')
+        else:
+            result[0] = str(result[0])
+            data.write(f'{result[0]}\n')
 
 def Repeat_Or_No():
     '''Function for asking user to continue or no'''
